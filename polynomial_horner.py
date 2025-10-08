@@ -9,7 +9,7 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
         raise ValueError
     print("S0 = " + str(coeffs[0]))
     while k < degree:
-        S = S * x + coeffs[degree-k]
+        S = S * x + coeffs[k]
         print("S" + str(k) + " = " + str(S))
         k = k + 1
     S+=constant_term
