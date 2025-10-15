@@ -2,7 +2,7 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-    coeffs = coefficients
+    coeffs = coefficients[::-1]
     S = coeffs[0]
     k = 1
     if len(coeffs) != degree:
@@ -12,11 +12,11 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
         S = S * x + coeffs[k]
         print("S" + str(k) + " = " + str(S))
         k = k + 1
-    S+=constant_term
+    S=S*x+constant_term
     print("S" + str(degree) + " = " + str(S))
     print("P(x) = " + str(S))
     return S
-    pass
+
 
 if __name__ == "__main__":
     # TODO: Add main program loop
